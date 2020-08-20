@@ -38,16 +38,16 @@ Total: 100%
 Train: 75%
 Validate: 25%
 
-Set 1:
+#### Set 1:
 40% of training data 
 
-Set 2:
+#### Set 2:
 20% of training data 
 
-Set 3:
+#### Set 3:
 20% of training data 
 
-Set 4:
+#### Set 4:
 20% of training data 
 
 Next step is to improvise this model such that it can differentiate between penumonia and other diseases. For this task, we use CXR14 dataset. CXR14 has over 112,000 images including normal images which consist of almost 25-30% of the total dataset. 
@@ -56,9 +56,10 @@ We'll split data into 4 sections too. To maintain significance of contributions 
 
 For each of the following steps, train only the decision fumction and the output values and observe difference.
 
-Step 1: Train over Set 1 of COVID-19 +ve CXR images and randomly select 4 times the number of images in set 1 for COVID-19 -ve class. 
+#### Step 1: 
+Train over Set 1 of COVID-19 +ve CXR images and randomly select 4 times the number of images in set 1 for COVID-19 -ve class. 
 
-Step 2: 
+#### Step 2: 
 
 Rank the rest of the images using 4 uncertainty based loss functions. Pick the most uncertain images
 and add them to Set 2. Train the model.
