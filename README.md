@@ -1,5 +1,4 @@
-# COVID-AL
-Detection of COVID-19 from chest Xray images using Active Learning
+# AL and ARL for detection of COVID-19 in Chest Xray images
 
 ### Terminology used in the write-up
 
@@ -14,19 +13,21 @@ Chest Xray image of suject not suffering from COVID-19, but suffering from other
 
 ## Why Active Learning here?
 
-a) Class imbalance
+#### a) Class imbalance
 
 Only arouind 400 COVID-19 +ve CXR images and more than 120,000 COVID-19 -ve CXR images. 
 
-b) Overfitting
+#### b) Overfitting
 
 With much lesser images in the postive class, the algorithm may not learn enough features to make accurate classification over unseen data
 
-c) Catastrophic forgetting
+#### c) Catastrophic forgetting
 
 If transfer learning is used, to learn the features needed to classify from such a diverse variety of features, the model may even perform less efficiently than the base model and result in errors.
 
 ## How AL helps in solving these:
+
+### a) Define new framework
 
 Widely accepted solutions for few-shot learning techniques is Transfer Learning.
 
@@ -67,3 +68,9 @@ and add them to Set 2. Train the model.
 Repeat step 2 as step 3 and step 4.
 
 Validate results.
+
+### b) Use Active Reinforcement Learning
+
+In the previous section, we used ranked different data points in decreasing order of uncertainties. Although it may appear that direct ranking of these sample images is a good deterministic solutions, the scale of over hundred thoudand images in pool makes this approach tedious. 
+
+Hence, as a substitute for thisn ranking algorithm, we need to define an agent which gets rewarded by making the network train over the most uncertain images. The policy that develops overtime must be able to train the network in the best way while being less computationally intensive than the generic sorting algorithm approach which was taken earlier.
