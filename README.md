@@ -1,4 +1,4 @@
-# AL & ARL for detection of COVID-19 in Chest Xray images
+# AL & ARL to detect of COVID-19 in Chest Xray images
 
 ### Terminology used in the write-up
 
