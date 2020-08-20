@@ -73,4 +73,8 @@ Validate results.
 
 In the previous section, we used ranked different data points in decreasing order of uncertainties. Although it may appear that direct ranking of these sample images is a good deterministic solutions, the scale of over hundred thoudand images in pool makes this approach tedious. 
 
-Hence, as a substitute for thisn ranking algorithm, we need to define an agent which gets rewarded by making the network train over the most uncertain images. The policy that develops overtime must be able to train the network in the best way while being less computationally intensive than the generic sorting algorithm approach which was taken earlier.
+Hence, as a substitute for this ranking algorithm, we need to define an agent which gets rewarded by making the network train over the most uncertain images. The policy that develops overtime must be able to train the network in the best way while being less computationally intensive than the generic sorting algorithm approach which was taken earlier.
+
+
+## Uncertainty calculation functions:
+
