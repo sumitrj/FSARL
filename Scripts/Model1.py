@@ -12,7 +12,7 @@ def reindex(df):
 # Dataset1:
 
 def gen1():
-  df1 = pd.read_csv('../input/rsna-pneumonia-detection-challenge/stage_2_detailed_class_info.csv')
+  df1 = pd.read_csv('../input/stage_2_detailed_class_info.csv')
   df1 = df1[df1['class']!='No Lung Opacity / Not Normal']
   df1['Opaque'] = np.array([float('Opacity' in i) for i in df1['class']])
   df1['Normal'] = np.ones(len(df1)) - df1['Opaque'].values
