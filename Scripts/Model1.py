@@ -16,8 +16,8 @@ def gen1():
   df1 = df1[df1['class']!='No Lung Opacity / Not Normal']
   df1['Opaque'] = np.array([float('Opacity' in i) for i in df1['class']])
   df1['Normal'] = np.ones(len(df1)) - df1['Opaque'].values
-  df1['filename'] = df['patientId']
-  df['Pneumonia'] = df['Opaque']
+  df1['filename'] = df1['patientId']
+  df['Pneumonia'] = df1['Opaque']
   df1 = df1[['filename', 'Normal', 'Pneumonia']]
   df1 = reindex(shuffle(pd.concat([ df1[df1['Normal']==1],df1[df1['Pneumonia']==1].iloc[:len(df1[df1['Normal']==1])]])))
   df1.to_csv('../Mets/Train1.csv')
